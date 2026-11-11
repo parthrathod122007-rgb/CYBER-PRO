@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  cyberpro:
+    build: .
+    container_name: cyberpro-platform
+    ports:
+      - "8000:8000"
+    environment:
+      - CYBERPRO_HOST=0.0.0.0
+      - CYBERPRO_PORT=8000
+      - CYBERPRO_SESSION_HOURS=12
+      - CYBERPRO_COOKIE_SECURE=0
+      - CLOUDFLARE_TURNSTILE_ENABLED=1
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

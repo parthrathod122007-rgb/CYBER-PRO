@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30,
+      "excludeFiles": "{public/assets/**,tests/**,scripts/**}"
+    }
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate=60"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/staff-login", "destination": "/staff-login.html" },
+    { "source": "/staff-login/", "destination": "/staff-login.html" },
+    { "source": "/admin-login", "destination": "/staff-login.html" },
+    { "source": "/admin-login/", "destination": "/staff-login.html" },
+    { "source": "/lms", "destination": "/api/index.py" },
+    { "source": "/lms/:path*", "destination": "/api/index.py" },
+    { "source": "/admin", "destination": "/api/index.py" },
+    { "source": "/admin/:path*", "destination": "/api/index.py" },
+    { "source": "/passport/:path*", "destination": "/api/index.py" },
+    { "source": "/uploads/:path*", "destination": "/api/index.py" },
+    { "source": "/healthz", "destination": "/api/index.py" },
+    { "source": "/api/:path*", "destination": "/api/index.py" }
+  ]
+}

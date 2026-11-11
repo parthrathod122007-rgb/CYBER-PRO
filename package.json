@@ -1,0 +1,28 @@
+{
+  "name": "cyberpro-platform",
+  "version": "2.0.0",
+  "description": "CYBERPRO Zero-Trust Cybersecurity Defense Academy, Student LMS & AI Assistant CRM",
+  "main": "server.py",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py",
+    "test": "python -m unittest discover -s tests -p \"test_*.py\" -v",
+    "test:bot": "python -m unittest tests/test_chatbot.py -v",
+    "test:crm": "python -m unittest tests/test_crm.py -v",
+    "test:auth": "python -m unittest tests/test_turnstile.py -v"
+  },
+  "keywords": [
+    "cybersecurity",
+    "zero-trust",
+    "lms",
+    "ai-chatbot",
+    "crm",
+    "ccce",
+    "defense-academy"
+  ],
+  "author": "Parth Rathod",
+  "license": "Proprietary",
+  "engines": {
+    "python": ">=3.10"
+  }
+}

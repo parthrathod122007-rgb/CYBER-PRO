@@ -1,0 +1,12 @@
+# CYBERPRO Academy, LMS & Zero-Trust Platform - Python Dependencies
+# ==============================================================================
+# Core HTTP server, SQLite persistence, scrypt auth, Cloudflare Turnstile check,
+# and AI inference (built-in engine + optional Gemini/OpenAI HTTP API calls) run
+# entirely on Python 3.10+ standard library modules for fast Vercel & local starts.
+# ==============================================================================
+
+# Enterprise Report Presentation (PPTX) Exports
+python-pptx>=1.0.0
+
+# Optional Browser E2E Testing (only needed locally for tests/test_e2e_browser.py)
+# playwright>=1.45.0
